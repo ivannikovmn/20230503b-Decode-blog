@@ -1,0 +1,62 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* align-items: center; */
+    /* width: 100%; */
+    /* justify-content: center; */
+    padding-top: 40px;
+}
+.form h2{
+    margin-bottom: 10px;
+}
+.form fieldset{
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin-bottom: 15px;
+    width: 100%;
+}
+/* .fildset label{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+} */
+.fieldset input{
+    width: 100%;
+    padding: 10px 60px 10px 10px;
+    /* margin: 0px 5px; */
+    outline: none;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    /* box-sizing: border-box; */
+}
+.fieldset button{
+    width: 100%;
+}
+
+.fieldset select{
+    padding: 10px 150px 10px 10px;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    font-size: 16px;
+    /* box-sizing: border-box; */
+    outline: none;
+}
+
+.fieldset textarea{
+    padding: 10px 150px 80px 10px;
+    border: 1px solid #E7E7E7;
+    font-size: 16px;
+    /* box-sizing: border-box; */
+    outline: none;
+}
+
+.fieldset .textarea-comment{
+    padding: 10px 700px 30px 10px;
+    border: 1px solid #E7E7E7;
+    font-size: 16px;
+    /* box-sizing: border-box; */
+    outline: none;   
+}

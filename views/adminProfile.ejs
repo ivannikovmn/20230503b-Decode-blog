@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="container">
+        <div class="main">
+            <div class="main-content">
+                <h2 class="space-between">
+                    Мои блоги
+                    <button onclick="document.location='/new'" class="blue-button">
+                        Новый блог
+                    </button>
+                </h2>
+                <%
+                    blogs.forEach(item => {
+                %>                
+                    <div class="main-card">
+                        <div class="card-center">
+                            <img src="<%=item.image%>" alt="">
+                            <div class="space-between">
+                                <a href="#">
+                                    <h3><%=item.title%></h3>
+                                </a>
+                                <div class="more">
+                                    <img src="/images/icons/more.png" alt="">
+                                    <div class="edit-remove-buttons flex-direction-column">
+                                        <a href="/edit/<%=item._id%>">Редактировать</a> 
+                                        <a class="button-remove"  onclick="deleteBlogs('<%=item._id%>' , '<%=item.author._id%>')">Удалить</a>
+                                    </div>                            
+                                </div>    
+                            </div>
+                            <p>
+                                <%=item.description%>
+                            </p>
+                            <!-- <p>
+                                Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом виджете Вы можете найти в статье. 
+                            </p>
+                            <p>
+                                Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим ег
+                            </p> -->
+                        </div>
+                        <div class="main-bar">
+                            <div>
+                                <img src="/images/icons/calendar.svg" alt=""> 
+                                26.06.2020
+                            </div>
+                            <div>
+                                <img src="/images/icons/eye.svg" alt=""> 21
+                            </div>
+                            <div>
+                                <img src="/images/icons/Shape.svg" alt=""> 4
+                            </div>
+                            <div>
+                                <img src="/images/icons/category.svg" alt=""> <%=item.category.name%>
+                            </div>
+                            <div>
+                                <img src="/images/icons/user.svg" alt=""> <%=item.author.full_name%>
+                            </div>
+                        </div>
+                    </div>
+                <%
+                    })
+                %>               
+                <!-- <div class="main-card">
+                    <div class="card-center">
+                        <img src="/images/index2.png" alt="">
+                        <div class="space-between">
+                            <a href="#">
+                                <h3>Разработчики изобрели методологию высокоскоростного программирования</h3>
+                            </a>
+                            <div class="more">
+                                <img src="/images/icons/more.png" alt="">
+                                <div class="edit-remove-buttons flex-direction-column">
+                                    <a href="/edit">Редактировать</a> 
+                                    <a class="button-remove">Удалить</a>
+                                </div>                            
+                            </div>    
+                        </div>
+                        <p>
+                            Осень 2020 года стала плодотворным временем для специалистов Webix. 
+                        </p>
+                        <p>
+                            Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом виджете Вы можете найти в статье. 
+                        </p>
+                        <p>
+                            Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим ег
+                        </p>
+                    </div>
+                    <div class="main-bar">
+                        <div>
+                            <img src="/images/icons/calendar.svg" alt=""> 
+                            26.06.2020
+                        </div>
+                        <div>
+                            <img src="/images/icons/eye.svg" alt=""> 21
+                        </div>
+                        <div>
+                            <img src="/images/icons/Shape.svg" alt=""> 4
+                        </div>
+                        <div>
+                            <img src="/images/icons/category.svg" alt=""> Веб-разработка
+                        </div>
+                        <div>
+                            <img src="/images/icons/user.svg" alt=""> Nast1289
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="categories text-center">
+                <div class="categories-shadow">
+                    <img src="/images/avatar_f.png" alt="">
+                    <h4><%=user.full_name%></h4>
+                    <p>
+                        В основном пишу про веб-разработку, на React&Redux
+                    </p>
+                    <p>285 постов за все время</p>
+                    <p>
+                        <button class="blue-button" >
+                            Редактировать
+                        </button> 
+                    </p>
+                    <p>
+                        <button class="blue-button" onclick="document.location='/api/signout'">
+                            Выход
+                        </button> 
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <%- include('partials/script.js')%>
+</body>
+</html>

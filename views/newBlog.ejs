@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="container">
+        <div class="main">
+            <form action="/api/blogs/new" method="POST" class="form" enctype="multipart/form-data">
+                <h2>Новый блог</h2>
+                <fieldset class="fieldset"><input type="text" placeholder="Введите заголовок блога" name="title"></fieldset>
+                <fieldset class="fieldset">
+                    <select name="category" id="">
+                        <%
+                            categories.forEach(category => {
+                        %>  
+                            <option value="<%=category._id%>"><%=category.name%></option>
+                        <%      
+                            })
+                        %>
+                        <!-- <option value="">Выберите категорию</option>
+                        <option value="">Прогнозы в IT</option>
+                        <option value="">Веб-разработка</option> -->
+                    </select>
+                </fieldset>
+                <fieldset class="fieldset">
+                    <input  class="сhange-img" type="file" name="image">
+                </fieldset>
+                <fieldset class="fieldset">
+                    <textarea placeholder="Введите описание блога" name="description"></textarea>
+                </fieldset>               
+                <fieldset  class="fieldset">
+                    <button class="blue-button" type="submit">Добавить</button>
+                </fieldset>                
+            </form>
+            <!-- <div class="main-content">
+                <h2>
+                Новый блог
+                </h2>
+                <input type="text" placeholder="Введите заголовок блога"><br><br>
+                <input type="number" placeholder="Выберите категорию"><br><br>
+                <select placeholder="">
+                    <option>Выберите категорию</option>
+                    <option></option>
+                  </select> <br><br>
+                <div class="сhange-img">
+                    Выберите картинку
+                </div><br>
+                <textarea placeholder="Введите описание блога"></textarea><br><br>
+                <button class="blue-button">Cоздать</button>
+            </div> -->
+        </div>
+    </div>
+    <%- include('partials/script.js')%>
+</body>
+</html>

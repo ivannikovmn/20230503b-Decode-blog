@@ -1,0 +1,43 @@
+﻿Termnal vsc (node) (лежит по D:\!nodejs\blog)
+npm init  
+npm i nodemon ejs express mongoose
+npm start
+npm i express-session
+npm i connect-mongo
+npm i passport
+npm i passport-local
+npm i multer
+npm i fs path
+
+
+Web
+https://www.onlinewebfonts.com/download/a1750a4dae8db954fdd595f313b3b34e
+https://www.makeuseof.com/nodejs-bcrypt-hash-verify-salt-password/
+https://cdnjs.com/libraries/axios
+https://git-scm.com/
+https://github.com/ivannikovmn/20230503b-Decode-blog
+
+
+Postman
+http://localhost:3000/api/categories
+
+
+Termnal vsc (mongosh)
+mongosh
+show dbs
+use blog
+show collections
+...
+db.categories.find()
+npm i bcrypt
+...
+db.users.find()
+...
+db.blogs.find()
+db.blogs.deleteOne({title:'Разработчики изобрели методологию высокоскоростного программирования'})
+...
+db.users.find()
+
+
+Termnal vsc(bash) (Git Bash c Javascript 13.4 + про .gitignore https://ru.stackoverflow.com/questions/564972/)
+

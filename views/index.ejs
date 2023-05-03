@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="container">
+        <div class="main">
+            <div class="main-content">
+                <h2 class="text-center">Блоги по программированию</h2>
+                <div class="main-content-description">
+                    Популярные и лучшие публикации по программированию для начинающих
+                    и профессиональных программистов и IT-специалистов.
+                </div>
+                <%
+                    blogs.forEach(item => {
+                %>                
+                    <div class="main-card">
+                        <div class="card-center">
+                            <img src="<%=item.image%>" alt="">
+                            <a href="#"><h3><%=item.title%></h3></a>
+                            <p>
+                                <%=item.description%>
+                            </p>
+                            <!-- <p>
+                                Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом виджете Вы можете найти в статье. 
+                            </p>
+                            <p>
+                                Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим ег
+                            </p> -->
+                        </div>
+                        <div class="main-bar">
+                            <div>
+                                <img src="/images/icons/calendar.svg" alt=""> 
+                                26.06.2020 
+                            </div>
+                            <div>
+                                <img src="/images/icons/eye.svg" alt=""> 21
+                            </div>
+                            <div>
+                                <img src="/images/icons/Shape.svg" alt=""> 4
+                            </div>
+                            <div>
+                                <img src="/images/icons/category.svg" alt=""> <%=item.category.name%>
+                            </div>
+                            <div>
+                                <img src="/images/icons/user.svg" alt=""> <%=item.author.full_name%>
+                            </div>
+                        </div>
+                    </div>
+                <%
+                    })
+                %>                
+                <!-- <div class="main-card">
+                    <div class="card-center">
+                        <img src="/images/index2.png" alt="">
+                        <a href="#"><h3>Разработчики изобрели методологию высокоскоростного программирования</h3></a>
+                        <p>
+                            Осень 2020 года стала плодотворным временем для специалистов Webix. 
+                        </p>
+                        <p>
+                            Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом виджете Вы можете найти в статье. 
+                        </p>
+                        <p>
+                            Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим ег
+                        </p>
+                    </div>
+                    <div class="main-bar">
+                        <div>
+                            <img src="/images/icons/calendar.svg" alt=""> 
+                            26.06.2020 
+                        </div>
+                        <div>
+                            <img src="/images/icons/eye.svg" alt=""> 21
+                        </div>
+                        <div>
+                            <img src="/images/icons/Shape.svg" alt=""> 4
+                        </div>
+                        <div>
+                            <img src="/images/icons/category.svg" alt=""> Веб-разработка
+                        </div>
+                        <div>
+                            <img src="/images/icons/user.svg" alt=""> Nast1289
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="categories">
+                <div class="categories-shadow">
+                    <h2>Категории</h2>
+                    <% categories.forEach(categories => {%>    
+                        <a href="/<%=categories.key%>"><%=categories.name%></a>
+                    <% }) %>
+                    <!-- <a href="">Прогнозы в IT</a>
+                    <a href="">Веб-разработка</a>
+                    <a href="">Мобильная разработка</a>
+                    <a href="">Фриланс</a>
+                    <a href="">Алгоритмы</a>
+                    <a href="">Тестирование IT систем</a>
+                    <a href="">Разработка игр</a>
+                    <a href="">Дизайн и юзабилити</a>
+                    <a href="">Искуственный интелект</a>
+                    <a href="">Машинное обучение</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/script.js')%>
+</body>
+</html>
