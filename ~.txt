@@ -39,5 +39,11 @@ db.blogs.deleteOne({title:'Разработчики изобрели метод�
 db.users.find()
 
 
-Termnal vsc(bash) (Git Bash c Javascript 13.4 + про .gitignore https://ru.stackoverflow.com/questions/564972/)
-
+Termnal vsc(bash) (Git Bash c Javascript 13.4 + ru.stackoverflow.com)
+git init 
+	.gitignore node_modules как в https://ru.stackoverflow.com/questions/564972/ (не сработало)
+git add .
+git commit -m "initial"
+git remote add origin https://github.com/ivannikovmn/20230503b-Decode-blog
+	p.s git branch --move master main - переименовать master в main в visual code 
+git push origin main
