@@ -58,14 +58,14 @@ router.get('/not-found', (req , res) => {
     res.render("notFound")
 })
 
-////
-
-router.get('/card_reg' , (req , res) =>{
-    res.render("card_reg")
+router.get('/detail/:id' , (req , res) =>{
+    res.render("detail" , {user: {}})
 })
+
+////
 
 router.get('/card_noreg' , async(req , res) =>{
     const allCategories = await Categories.find()
-    res.render("card_noreg" , {categories: allCategories} )
+    res.render("card_noreg" , {categories: allCategories , user: {}})
 })
 module.exports = router

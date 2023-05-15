@@ -71,7 +71,7 @@ button{
     padding-bottom: 20px;
 }
 
-.card-center > img{
+.card-center > a > img, .card-center > img{
     display: block;
     margin: 20px auto 0 auto;
     width: 100%;
