@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {upload} = require('./multer')
 const {createBlog , editBlog, deleteBlog} = require('./controller')
-const {isAuth} = require('../auth/middlewares')
+const {isAuth , isAdmin} = require('../auth/middlewares')
 
 // router.post('/api/new' , (req , res) =>{
 //     res.send('ok')
@@ -12,8 +12,8 @@ const {isAuth} = require('../auth/middlewares')
 //     console.log(req.body);
 //     res.send('ok')
 // })
-router.post('/api/blogs/new' , isAuth , upload.single('image') , createBlog)
-router.post('/api/blogs/edit' , isAuth, upload.single('image') , editBlog)
-router.delete('/api/blogs/:id' , isAuth, deleteBlog)
+router.post('/api/blogs/new' , isAdmin , upload.single('image') , createBlog)
+router.post('/api/blogs/edit' , isAdmin, upload.single('image') , editBlog)
+router.delete('/api/blogs/:id' , isAdmin, deleteBlog)
 
 module.exports = router

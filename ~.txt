@@ -52,4 +52,10 @@ git add .
 git commit -m "add in views ejs: <%- include('partials/scripts.ejs')%> . Comment console.log(data) in deleteBlogs.js"
 git push origin main
 ---
+git add .
 git commit -m "add project 12 part 2 (detail)"
+git push origin main
+---
+git add .
+git commit -m "add project 13 (fix middlewares, modify detail+, category navigation, pagenation)"
+git push origin main
