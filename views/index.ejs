@@ -56,12 +56,17 @@
                     })
                 %>   
                 <div class="pages">
+                <!-- <a href=""><%=locals.category%></a> -->
                     <%
-                            for(let i = 0; i < pages; i++){
+                    let localsString = ''
+                    if(locals.category){
+                        localsString = `category=${locals.category}&`
+                    }
+                        for(let i = 0; i < pages; i++){
                     %>
-                            <a href="?page=<%=i%>"><%=i + 1%></a>
+                        <a href="?<%=localsString%>page=<%=i%>"><%=i + 1%></a>
                     <%
-                            }
+                        }
                     %>
                 </div>                         
                 <!-- <div class="main-card">
@@ -102,7 +107,7 @@
                 <div class="categories-shadow">
                     <h2>Категории</h2>
                     <% categories.forEach(categories => {%>    
-                        <a href="?categ=<%=categories.key%>"><%=categories.name%></a>
+                        <a href="?category=<%=categories.key%>"><%=categories.name%></a>
                     <% }) %>
                     <!-- <a href="">Прогнозы в IT</a>
                     <a href="">Веб-разработка</a>

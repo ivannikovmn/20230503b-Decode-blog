@@ -59,3 +59,7 @@ git push origin main
 git add .
 git commit -m "add project 13 (fix middlewares, modify detail+, category navigation, pagenation)"
 git push origin main
+---
+git add .
+git commit -m "fix categ>category and add project 14 part 1 (pagination)"
+git push origin main

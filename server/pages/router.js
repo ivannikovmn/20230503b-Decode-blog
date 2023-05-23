@@ -6,11 +6,12 @@ const Blog = require('../Blogs/Blog')
 
 router.get('/', async(req , res) => {
     const options = {}
-    const categories = await Categories.findOne({key : req.query.categ})
+    const categories = await Categories.findOne({key : req.query.category})
     // console.log(categories);
-    if(req.query.categ){ 
+    if(req.query.category){ 
         // options.category = req.query.categ
         options.category  = categories._id
+        res.locals.category = req.query.category
     }
     let page = 0
     const limit = 3
@@ -18,7 +19,7 @@ router.get('/', async(req , res) => {
         page = req.query.page
     }
     // const totalBlogs = await Blog.count(options)
-    const totalBlogs = await Blog.count()
+    const totalBlogs = await Blog.count(options)
     // console.log(totalBlogs);
     // console.log(options);
     // console.log(req.query); // чтобый достать 0 из http://localhost:3000/?categ=0
