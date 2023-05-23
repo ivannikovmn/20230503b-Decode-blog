@@ -49,7 +49,7 @@ router.get('/register' , (req , res) =>{
 
 router.get('/profile/:id' , async(req , res) =>{
     const user = await User.findById(req.params.id)
-    console.log(user);
+    // console.log(user);
     // console.log(req.user , '==profile');
     // res.render("profile", {user: req.user ?  req.user: {}})
     // if (user.full_name.length > 0){
@@ -87,18 +87,10 @@ router.get('/not-found', (req , res) => {
     res.render("notFound")
 })
 
-router.get('/detail/:id', async(req, res) => {
-    const user = await User.findById(req.params.id)
+router.get('/detail/:id' , async(req , res) =>{
     const allCategories = await Categories.find()
-    const blogs = await Blog.find().populate('category').populate('author')
-    res.render("detail" , {categories: allCategories , loginUser: req.user ?  req.user: {} , user: user, blogs})
+    const blog = await Blog.findById(req.params.id).populate('category').populate('author')
+    res.render("detail" , {categories: allCategories, user: req.user ?  req.user: {} , blog: blog})
 })
 
-
-////
-
-router.get('/card_noreg' , async(req , res) =>{
-    const allCategories = await Categories.find()
-    res.render("card_noreg" , {categories: allCategories , user: {}})
-})
 module.exports = router

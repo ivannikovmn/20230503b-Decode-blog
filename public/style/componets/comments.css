@@ -1,0 +1,19 @@
+.comments h4{
+    display: flex;
+    align-items: center;
+    gap: 10px;   
+}
+
+.add-comment-form textarea{
+    width: 100%;
+    resize: none;
+    height: 100px;
+    margin-top: 10px;
+    border-color: #E7E7E7;
+}
+
+.no-comment{
+    background-color: #FFF3CD;
+    padding: 20px;
+    color: #856404;
+}

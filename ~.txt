@@ -67,3 +67,8 @@ git push origin main
 git add .
 git commit -m "add project 14 part 2 (search + pagination)"
 git push origin main
+---
+git add .
+git commit -m "fix detail and add project 14 part 3 (comment)"
+git push origin main
+

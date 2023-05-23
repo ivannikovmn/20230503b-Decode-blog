@@ -35,7 +35,7 @@ const signUp = async(req , res) => {
 }
 
 const signIn = (req, res) => {
-    console.log(req.user);
+    // console.log(req.user);
     // res.redirect(`/profile/${req.user._id}`)
     if(req.user.isAdmin){
         res.redirect(`/admin/${req.user._id}`)

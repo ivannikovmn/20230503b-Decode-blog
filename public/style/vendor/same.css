@@ -88,12 +88,6 @@ button{
     gap: 10px;
 }
 
-.main-comment h4{
-    display: flex;
-    align-items: center;
-    gap: 10px;   
-}
-
 /* .main-bar img{
     padding: 0 10px 0 30px;
 }
@@ -186,12 +180,6 @@ p{
     transition: .1s;
 }
 
-.no-comment{
-    background-color: #FFF3CD;
-    padding: 20px;
-    color: #856404;
-}
-
 .сhange-img{
     background-color: yellow;
     padding: 10px;
@@ -201,7 +189,3 @@ p{
 select{
     color: gray;
 }
-
-/* main-comment{
-
-} */

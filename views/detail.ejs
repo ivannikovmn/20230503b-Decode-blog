@@ -7,13 +7,10 @@
     <%- include('partials/header.ejs') %>
     <div class="container">
         <div class="main">
-            <div class="main-content">
-                <%
-                    blogs.forEach(item => {
-                %>                
+            <div class="main-content">              
                     <div class="main-card">
                         <div class="card-center">
-                            <img src="<%=item.image%>" alt=""><br>
+                            <img src="<%=blog.image%>" alt=""><br>
                             <div class="main-bar">
                                 <div>
                                     <img src="/images/icons/calendar.svg" alt=""> 
@@ -26,28 +23,63 @@
                                     <img src="/images/icons/Shape.svg" alt=""> 4
                                 </div>
                                 <div>
-                                    <img src="/images/icons/category.svg" alt=""> <%=item.category.name%>
+                                    <img src="/images/icons/category.svg" alt=""> <%=blog.category.name%>
                                 </div>
                                 <div>
-                                    <img src="/images/icons/user.svg" alt=""> <%=item.author.full_name%>
+                                    <img src="/images/icons/user.svg" alt=""> <%=blog.author.full_name%>
                                 </div>
                             </div>
                             <div class="space-between">
                                 <a href="#">
-                                    <h3><%=item.title%></h3>
+                                    <h3><%=blog.title%></h3>
                                 </a>
-                                <div class="more">
-                                    <img src="/images/icons/more.png" alt="">
-                                    <div class="edit-remove-buttons flex-direction-column">
-                                        <a href="/edit/<%=item._id%>">Редактировать</a> 
-                                        <a class="button-remove"  onclick="deleteBlogs('<%=item._id%>' , '<%=item.author._id%>')">Удалить</a>
-                                    </div>                            
-                                </div>    
+                                <%
+                                    if(user.isAdmin){
+                                %>                                
+                                    <div class="more">
+                                        <img src="/images/icons/more.png" alt="">
+                                        <div class="edit-remove-buttons flex-direction-column">
+                                            <a href="/edit/<%=blog._id%>">Редактировать</a> 
+                                            <a class="button-remove"  onclick="deleteBlogs('<%=blog._id%>' , '<%=blog.author._id%>')">Удалить</a>
+                                        </div>                            
+                                    </div>   
+                                <%
+                                    }
+                                %>                                 
                             </div>
                             <p>
-                                <%=item.description%>
+                                <%=blog.description%>
                             </p>
-                            <div class="main-comment">
+                            <div class="comments">
+                                <% if(user && user._id){%>
+                                    <h4>2 комментария</h4>  
+                                    <form action="" class="add-comment-form"> 
+                                        <h4>
+                                            <img src="/images/avatar_t.png" alt="">
+                                            Елнур Сеитжанов
+                                        </h4>
+                                        <p>
+                                            В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
+                                        </p>
+                                        <h4>
+                                            <img src="/images/avatar_t.png" alt="">
+                                            Елнур Сеитжанов
+                                        </h4>
+                                        <p>
+                                            В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
+                                        </p>
+                                        <textarea name="text"></textarea>
+                                        <button class="blue-button">Сохранить</button> 
+                                    </form>   
+                                <%}else{%> 
+                                    <div class="no-comment">
+                                        Чтобы оставить комментарий <a href="/register" class="color-blue">зарегистрируйтесь</a> , или <a href="/login" class="color-blue">войдите в аккаунт</a> .
+                                    </div>
+                                <%
+                                    }   
+                                %>                                                             
+                            </div>
+                            <!-- <div class="comments">
                                 <h4>2 комментария</h4>   
                                 <h4>
                                     <img src="/images/avatar_t.png" alt="">
@@ -69,18 +101,15 @@
                                 </fieldset>  <br>         
     
                                 <button class="blue-button" type="submit">Отправить</button>
-                            </div>
+                            </div> -->
                         </div>
-                    </div>
-                <%
-                    })
-                %>               
+                    </div>             
             </div>
             <div class="categories">
                 <div class="categories-shadow">
                     <h2>Категории</h2>
                     <% categories.forEach(categories => {%>    
-                        <a href="/<%=categories.key%>"><%=categories.name%></a>
+                        <a href="/?category=<%=categories.key%>"><%=categories.name%></a>
                     <% }) %>
                 </div>
             </div>
