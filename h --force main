@@ -1,0 +1,41 @@
+[33mcommit f5702c82261337575f1c545b1b9f857eb9bbff22[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Tue May 23 14:57:33 2023 +0600
+
+    fix detail and add project 14 part 3 (comment)
+
+[33mcommit 3d047b77f2333b13469b4207d3ddb762f8d9bdec[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Tue May 23 12:41:35 2023 +0600
+
+    add project 14 part 2 (search + pagination)
+
+[33mcommit ddf02840fe87858235210074941f84227ff402ea[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Tue May 23 12:18:43 2023 +0600
+
+    fix categ>category and add project 14 part 1 (pagination)
+
+[33mcommit bbbafa525bebfb170e1671b69bf264c1cba22925[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Fri May 19 19:45:08 2023 +0600
+
+    add project 13 (fix middlewares, modify detail+, category navigation, pagenation)
+
+[33mcommit df8580c4f2dc2241236e0b97584d28f0ca28c865[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Mon May 15 15:45:11 2023 +0600
+
+    add project 12 part 2 (detail)
+
+[33mcommit 5cad277ef217dc97d5fc43e295f38e32ff50eade[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Mon May 15 14:39:26 2023 +0600
+
+    add in views ejs: <%- include('partials/scripts.ejs')%> . Comment console.log(data) in deleteBlogs.js
+
+[33mcommit 563b771df2f31170484bec452267bc221399d7c1[m
+Author: localhost2030 <local_host@mail.ru>
+Date:   Wed May 3 20:01:52 2023 +0600
+
+    initial

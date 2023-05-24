@@ -37,6 +37,9 @@ db.blogs.find()
 db.blogs.deleteOne({title:'Разработчики изобрели методологию высокоскоростного программирования'})
 ...
 db.users.find()
+...
+db.rates.find()
+
 
 
 Termnal vsc(bash) (Git Bash c Javascript 13.4 + ru.stackoverflow.com)
@@ -69,6 +72,13 @@ git commit -m "add project 14 part 2 (search + pagination)"
 git push origin main
 ---
 git add .
-git commit -m "fix detail and add project 14 part 3 (comment)"
+git commit -m "fix detail and add project 14 part 2 (search + pagination)"
 git push origin main
+---
+git commit --amend -m "fix detail and add project 14 part 3 (comment)"
+git push --force origin main
+---
+git add .
+git commit -m "fix app.use(express.json()) at server.js and add project 15 (rates, comment)"
+git push --force origin main
 

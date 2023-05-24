@@ -3,6 +3,7 @@ const router = express.Router();
 const Categories = require('../Categories/Categories')
 const User = require('../auth/User')
 const Blog = require('../Blogs/Blog')
+const Rate = require('../Rates/Rates')
 
 router.get('/', async(req , res) => {
     const options = {}
@@ -88,9 +89,11 @@ router.get('/not-found', (req , res) => {
 })
 
 router.get('/detail/:id' , async(req , res) =>{
+    const rates = await Rate.find({blogId: req.params.id}).populate('authorId')
+    // console.log(rates);
     const allCategories = await Categories.find()
     const blog = await Blog.findById(req.params.id).populate('category').populate('author')
-    res.render("detail" , {categories: allCategories, user: req.user ?  req.user: {} , blog: blog})
+    res.render("detail" , {categories: allCategories, user: req.user ?  req.user: {} , blog: blog , rates: rates})
 })
 
 module.exports = router

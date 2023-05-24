@@ -53,23 +53,33 @@
                             <div class="comments">
                                 <% if(user && user._id){%>
                                     <h4>2 комментария</h4>  
-                                    <form action="" class="add-comment-form"> 
-                                        <h4>
+                                    <form class="add-comment-form" onsubmit="sendRate(event)"> 
+                                        <%
+                                            if(rates){   
+                                                rates.forEach(rate => { 
+                                        %>
+                                                <div class="comment">
+                                                    <h4>
+                                                        <img src="/images/avatar_t.png" alt="">
+                                                        <a href=""><%=rate.authorId.full_name%></a>
+                                                    </h4>
+                                                    <p><%=rate.text%></p>
+                                                </div>
+                                        <%      })  
+                                            }   
+                                        %>  
+                                        <!-- <h4>
                                             <img src="/images/avatar_t.png" alt="">
                                             Елнур Сеитжанов
                                         </h4>
                                         <p>
                                             В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
-                                        </p>
-                                        <h4>
-                                            <img src="/images/avatar_t.png" alt="">
-                                            Елнур Сеитжанов
-                                        </h4>
-                                        <p>
-                                            В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
-                                        </p>
-                                        <textarea name="text"></textarea>
-                                        <button class="blue-button">Сохранить</button> 
+                                        </p>                                                                               -->
+
+                                        <textarea id="comment-text"></textarea>
+                                        <input type="hidden" value="<%=user._id%>" id="comment_author">
+                                        <input type="hidden" value="<%=blog._id%>" id="comment_blog">
+                                        <button class="blue-button" type="submit">Сохранить</button> 
                                     </form>   
                                 <%}else{%> 
                                     <div class="no-comment">
@@ -77,7 +87,7 @@
                                     </div>
                                 <%
                                     }   
-                                %>                                                             
+                                %>                                                       
                             </div>
                             <!-- <div class="comments">
                                 <h4>2 комментария</h4>   
