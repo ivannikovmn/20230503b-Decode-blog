@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
     full_name : String,
     password: String,
     isAdmin: Boolean,
+    googleId: String,
 })
 
 module.exports = mongoose.model('user' , UserSchema)

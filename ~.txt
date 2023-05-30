@@ -8,6 +8,7 @@ npm i passport
 npm i passport-local
 npm i multer
 npm i fs path
+npm install passport-google-oauth20
 
 
 Web
@@ -16,6 +17,8 @@ https://www.makeuseof.com/nodejs-bcrypt-hash-verify-salt-password/
 https://cdnjs.com/libraries/axios
 https://git-scm.com/
 https://github.com/ivannikovmn/20230503b-Decode-blog
+https://console.cloud.google.com/cloud-resource-manager
+https://www.passportjs.org/packages/passport-google-oauth20/
 
 
 Postman
@@ -41,10 +44,10 @@ db.users.find()
 db.rates.find()
 
 
-
 Termnal vsc(bash) (Git Bash c Javascript 13.4 + ru.stackoverflow.com)
 git init 
-	.gitignore node_modules как в https://ru.stackoverflow.com/questions/564972/ (не сработало)
+	.gitignore node_modules как в https://ru.stackoverflow.com/questions/564972/ 
+	(В корне проекта с гитом создаете файл .gitignore в котором прописываете node_modules/.... всё)
 git add .
 git commit -m "initial"
 git remote add origin https://github.com/ivannikovmn/20230503b-Decode-blog
@@ -81,4 +84,9 @@ git push --force origin main
 git add .
 git commit -m "fix app.use(express.json()) at server.js and add project 15 (rates, comment)"
 git push --force origin main
+---
+git add .
+git commit -m "add project 16 (passport google oauth)"
+git push origin main
+---
 
