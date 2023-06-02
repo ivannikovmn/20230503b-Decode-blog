@@ -9,6 +9,7 @@ npm i passport-local
 npm i multer
 npm i fs path
 npm install passport-google-oauth20
+npm install passport-github2
 
 
 Web
@@ -19,6 +20,8 @@ https://git-scm.com/
 https://github.com/ivannikovmn/20230503b-Decode-blog
 https://console.cloud.google.com/cloud-resource-manager
 https://www.passportjs.org/packages/passport-google-oauth20/
+https://www.youtube.com/embed/zkOXQSR3ClM
+https://www.passportjs.org/packages/passport-github2/
 
 
 Postman
@@ -35,11 +38,13 @@ db.categories.find()
 npm i bcrypt
 ...
 db.users.find()
+db.users.deleteOne({title:'Разработчики изобрели методологию высокоскоростного программирования'})
 ...
 db.blogs.find()
-db.blogs.deleteOne({title:'Разработчики изобрели методологию высокоскоростного программирования'})
+db.blogs.deleteOne({__v: 0})
 ...
 db.users.find()
+db.users.deleteOne({_id: ObjectId("6479c05dfff4f183fb3df663")})
 ...
 db.rates.find()
 
@@ -91,6 +96,10 @@ git push origin main
 ---
 git add .
 git commit -m "fix add project 10 part 3, project 11, project 12 part 1 (I'll watch)"
+git push origin main
+-
+git add .
+git commit -m "add passport github oauth"
 git push origin main
 -
 
