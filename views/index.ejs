@@ -18,6 +18,31 @@
                 %>                
                     <div class="main-card">
                         <div class="card-center">
+                            <%
+                                if(user.toWatch && user.toWatch.includes(item._id)){
+                            %>
+                                <div>                                        
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/images/icons/saved.png" style="width: 25px; opacity: 0.6;" alt="">                                                                         
+                                        <a onclick="deleteFromToWatch('<%=item._id%>')" style="cursor: pointer;">
+                                            Сохранено
+                                        </a>                                      
+                                    </div>                            
+                                </div>
+                            <%
+                                }else{
+                            %>     
+                            <div>                                        
+                                <div style="display: flex; align-items: center;">
+                                    <img src="/images/icons/save.svg" style="width: 25px; opacity: 0.6;" alt="">                                                                         
+                                    <a onclick="saveToWatch('<%=item._id%>')" style="cursor: pointer;">
+                                        Сохранить
+                                    </a>                                      
+                                </div>                            
+                            </div>                                                                               
+                            <%
+                                }
+                            %>  
                             <a href="/detail/<%=item._id%>"> 
                                 <img src="<%=item.image%>" alt="">
                                 <h3><%=item.title%></h3>

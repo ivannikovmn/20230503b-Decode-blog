@@ -20,18 +20,15 @@
                             categories.forEach(category => {
                                 if(category.id == blog.category){
                         %>  
-                                <option value="<%=category._id%>" selected><%= category.name%></option>
+                                <option value="<%=category._id%>" selected><%=category.name%></option>
                         <%    
                                 }else{
                         %>                        
-                                <option value="<%=category._id%>"><%= category.name%></option>
+                                <option value="<%=category._id%>"><%=category.name%></option>
                         <%      
                                 }
                             })
                         %>
-                        <!-- <option value="">Выберите категорию</option>
-                        <option value="">Прогнозы в IT</option>
-                        <option value="">Веб-разработка</option> -->
                     </select>
                 </fieldset>
                 <fieldset class="fieldset">

@@ -37,7 +37,12 @@ router.get('/', async(req , res) => {
     // console.log(req.query); // чтобый достать 0 из http://localhost:3000/?categ=0
     const allCategories = await Categories.find()
     const blogs = await Blog.find(options).limit(limit).skip(page * limit).populate('category').populate('author')
-    res.render("index" , {categories: allCategories , user: req.user ?  req.user: {} , blogs , pages: Math.ceil(totalBlogs / limit)})
+    const user = req.user ? await User.findById(req.user._id)
+    // .populate('toWatch')
+    // .populate({path: 'toWatch' , populate: {path: 'category'}})
+    // .populate({path: 'toWatch' , populate: {path: 'author'}}) 
+    : {}    
+    res.render("index" , {categories: allCategories , user , blogs , pages: Math.ceil(totalBlogs / limit)})
 })
 
 router.get('/login' , (req , res) =>{
@@ -49,15 +54,12 @@ router.get('/register' , (req , res) =>{
 })
 
 router.get('/profile/:id' , async(req , res) =>{
-    const user = await User.findById(req.params.id)
-    // console.log(user);
-    // console.log(req.user , '==profile');
-    // res.render("profile", {user: req.user ?  req.user: {}})
-    // if (user.full_name.length > 0){
-    // console.log(user._id);
-    // console.log(req.user._id);
+    const user = await User.findById(req.params.id).populate('toWatch')
+    .populate({path: 'toWatch' , populate: {path: 'category'}})
+    .populate({path: 'toWatch' , populate: {path: 'author'}})
     if (user){
         res.render("profile", { user: user, loginUser: req.user})
+        console.log(user);
     }else{//не работает пока        
             res.redirect('/not-found') 
             // res.render('/not-found') 

@@ -89,4 +89,8 @@ git add .
 git commit -m "add project 16 (passport google oauth)"
 git push origin main
 ---
+git add .
+git commit -m "fix add project 10 part 3, project 11, project 12 part 1 (I'll watch)"
+git push origin main
+-
 

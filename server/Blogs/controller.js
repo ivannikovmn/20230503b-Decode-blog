@@ -1,4 +1,5 @@
 const Blog = require('./Blog')
+const User = require('../auth/User')
 const fs = require('fs')
 const path = require('path')
 const createBlog = async (req , res) =>  {
@@ -62,8 +63,43 @@ const deleteBlog = async(req , res) => {
     }
 }
 
+const saveBlog = async(req , res) => {
+    // console.log(req.body);
+    if(req.user && req.body.id){
+        const user = await User.findById(req.user.id)  
+        // console.log(user); 
+        const findBlog = user.toWatch.filter(item => item._id == req.body.id);
+        // user.toWatch = []
+        if(findBlog.length == 0){
+            user.toWatch.push(req.body.id);
+            user.save()
+            res.send('Блог успешно сохранен')
+        }else{
+            res.send('Блог уже сохранен')
+        }
+    }
+}
+
+const deleteFromToWatch = async(req , res) => {
+    if(req.user && req.params.id){
+        const user = await User.findById(req.user.id)
+        // console.log(user);
+        // console.log('work');
+        for(let i = 0; i < user.toWatch.length; i++){
+            if(user.toWatch[i] == req.params.id){
+                user.toWatch.splice(i , 1)
+                user.save()
+                res.send('Успешно удалено')
+            }
+        }
+        // res.send('Данные не найдены')
+    }
+}
+
 module.exports = {
     createBlog,
     editBlog,
-    deleteBlog
+    deleteBlog,
+    saveBlog,
+    deleteFromToWatch
 }
