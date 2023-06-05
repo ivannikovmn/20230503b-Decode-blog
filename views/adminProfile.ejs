@@ -54,6 +54,21 @@
                                 <img src="/images/icons/user.svg" alt=""> <%=item.author.full_name%>
                             </div>
                         </div>
+                        <div class="card-center">
+                            <div class="space-between">
+                                <a href="#">
+                                    <h3></h3>
+                                </a>
+                                <div class="more">
+                                    <img src="/images/icons/more.png" alt="">
+                                    <div class="edit-remove-buttons flex-direction-column">
+                                        <a href="/edit_user/<%=item._id%>">Редактировать</a> 
+                                        <a href="" style="font-style: italic">Блокировать</a> 
+                                        <a class="button-remove"  onclick="">Удалить</a>
+                                    </div>                            
+                                </div>    
+                            </div>
+                        </div>                        
                     </div>
                 <%
                     })

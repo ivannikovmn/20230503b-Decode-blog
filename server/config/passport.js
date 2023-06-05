@@ -61,7 +61,7 @@ passport.use(new GitHubStrategy({
   async function(accessToken, refreshToken, profile, cb) {
     const user = await User.find({ gitHubId: profile.id })
     // console.log(user);
-    console.log(profile);
+    // console.log(profile);
     const newUser = await new User({
         gitHubId: profile.id,
         full_name: profile.username,

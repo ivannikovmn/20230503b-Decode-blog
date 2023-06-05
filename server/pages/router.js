@@ -59,7 +59,7 @@ router.get('/profile/:id' , async(req , res) =>{
     .populate({path: 'toWatch' , populate: {path: 'author'}})
     if (user){
         res.render("profile", { user: user, loginUser: req.user})
-        console.log(user);
+        // console.log(user);
     }else{//не работает пока        
             res.redirect('/not-found') 
             // res.render('/not-found') 
@@ -84,6 +84,18 @@ router.get('/edit/:id' , async(req , res) =>{
     const allCategories = await Categories.find()
     const blog = await Blog.findById(req.params.id)
     res.render("editBlog" , {categories: allCategories, user: req.user ?  req.user: {} , blog})
+})
+
+router.get('/edit_comment/:id' , async(req , res) =>{
+    const allCategories = await Categories.find()
+    const blog = await Blog.findById(req.params.id)
+    res.render("editComment" , {categories: allCategories, user: req.user ?  req.user: {} , blog})
+})
+
+router.get('/edit_user/:id' , async(req , res) =>{
+    const allCategories = await Categories.find()
+    const blog = await Blog.findById(req.params.id)
+    res.render("editUser" , {categories: allCategories, user: req.user ?  req.user: {} , blog})
 })
 
 router.get('/not-found', (req , res) => {

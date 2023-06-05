@@ -54,6 +54,7 @@
                                 <% if(user && user._id){%>
                                     <h4>2 комментария</h4>  
                                     <form class="add-comment-form" onsubmit="sendRate(event)"> 
+                                       
                                         <%
                                             if(rates){   
                                                 rates.forEach(rate => { 
@@ -62,8 +63,26 @@
                                                     <h4>
                                                         <img src="/images/avatar_t.png" alt="">
                                                         <a href=""><%=rate.authorId.full_name%></a>
-                                                    </h4>
+                                                    </h4>                                                   
                                                     <p><%=rate.text%></p>
+                                                    <div class="space-between">
+                                                        <a href="#"><h3></h3></a>
+                                                        <%
+                                                            if(user){ //user.isAdmin
+                                                        %>                                
+                                                            <div class="more">
+                                                                <img src="/images/icons/more.png" alt="">
+                                                                <div class="edit-remove-buttons flex-direction-column">
+                                                                    <a href="/edit_comment/<%=blog._id%>">Редактировать</a> 
+                                                                    <a class="button-remove"  onclick="deleteRate('<%=rate._id%>')">
+                                                                        Удалить
+                                                                    </a>
+                                                                </div>                            
+                                                            </div>   
+                                                        <%
+                                                            }
+                                                        %>                                 
+                                                    </div>                                                    
                                                 </div>
                                         <%      })  
                                             }   

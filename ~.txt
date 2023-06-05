@@ -47,6 +47,9 @@ db.users.find()
 db.users.deleteOne({_id: ObjectId("6479c05dfff4f183fb3df663")})
 ...
 db.rates.find()
+db.rates.deleteOne({_id: ObjectId("6479ff47b9a2f985db1632c5")})
+...
+cls
 
 
 Termnal vsc(bash) (Git Bash c Javascript 13.4 + ru.stackoverflow.com)
@@ -102,4 +105,10 @@ git add .
 git commit -m "add passport github oauth"
 git push origin main
 -
-
+git add .
+git commit -m "near project 14 part 3 and project 15 (add delete comment)"
+git push origin main
+-
+git add .
+git commit -m "near edit/blog/delete user/comment)"
+git push origin main
