@@ -119,3 +119,10 @@ git push --force origin main
 git add .
 git commit -m "add project 9 part 3-4 (view, edit comment)"
 git push origin main
+-
+git commit --amend -m "add project 9 part 3-4, project 10 part 1 (view, edit comment)"
+git push --force origin main
+-
+git add .
+git commit -m "add project 10 part 2 (delete comment)"
+git push origin main

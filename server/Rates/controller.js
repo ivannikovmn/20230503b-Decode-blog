@@ -20,7 +20,7 @@ const editRate = async (req , res) => {
         ){
             const rates = await Rate.findById(req.body.id)
             // <1 cпособ редактирования>
-            console.log(rates);
+            // console.log(rates);
             rates.text = req.body.text
             rates.save()  
             res.redirect('/admin/' + req.user._id) 
@@ -41,25 +41,18 @@ const editRate = async (req , res) => {
         }
 }
 
-
-// const deleteFromRate = async(req , res) => {
-//     if(req.user && req.params.id){
-//         // const user = await User.findById(req.user.id)
-//         // console.log(user);
-//         console.log('work');
-//         res.send('ok')
-//         // for(let i = 0; i < user.toWatch.length; i++){
-//         //     if(user.toWatch[i] == req.params.id){
-//         //         user.toWatch.splice(i , 1)
-//         //         user.save()
-//         //         res.send('Успешно удалено')
-//         //     }
-//         // }
-//         // res.send('Данные не найдены')
-//     }
-// }
+const deleteRate = async(req , res) => {
+    const rate = await Rate.findById(req.params.id)
+    if(rate){
+        await Rate.deleteOne({_id: req.params.id})
+        res.status(200).send('ok')
+    }else{
+        res.status(404).send('Not found')
+    }
+}
 
 module.exports = {
     saveRate, 
-    editRate 
+    editRate,
+    deleteRate 
 }
