@@ -112,3 +112,10 @@ git push origin main
 git add .
 git commit -m "near edit/blog/delete user/comment)"
 git push origin main
+-
+git commit --amend -m "near edit/block/delete user/comment"
+git push --force origin main
+-
+git add .
+git commit -m "add project 9 part 3-4 (view, edit comment)"
+git push origin main

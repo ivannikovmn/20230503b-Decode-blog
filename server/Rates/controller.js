@@ -35,7 +35,7 @@ const editRate = async (req , res) => {
             //     author: req.user._id                        
             // })                              
             // res.redirect('/admin/' + req.user._id)  
-            // // </2 cпособ редактирования>                  
+            // // </2 cпособ редактирования>                   
         }else{
             res.redirect(`/edit_comment/${req.body.id}?error=1`)
         }
