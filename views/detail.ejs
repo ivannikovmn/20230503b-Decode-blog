@@ -65,24 +65,7 @@
                                                         <a href=""><%=rate.authorId.full_name%></a>
                                                     </h4>                                                   
                                                     <p><%=rate.text%></p>
-                                                    <div class="space-between">
-                                                        <a href="#"><h3></h3></a>
-                                                        <%
-                                                            if(user){ //user.isAdmin
-                                                        %>                                
-                                                            <div class="more">
-                                                                <img src="/images/icons/more.png" alt="">
-                                                                <div class="edit-remove-buttons flex-direction-column">
-                                                                    <a href="/edit_comment/<%=blog._id%>">Редактировать</a> 
-                                                                    <a class="button-remove"  onclick="deleteRate('<%=rate._id%>')">
-                                                                        Удалить
-                                                                    </a>
-                                                                </div>                            
-                                                            </div>   
-                                                        <%
-                                                            }
-                                                        %>                                 
-                                                    </div>                                                    
+                                                    <!-- Редактировать-удалить коменты -->
                                                 </div>
                                         <%      })  
                                             }   

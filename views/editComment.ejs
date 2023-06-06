@@ -7,11 +7,14 @@
     <%- include('partials/header.ejs') %>
     <div class="container">
         <div class="main">
-            <form action="/api/blogs/edit" method="POST" enctype="multipart/form-data" class="form">
+            <form action="/api/rate/edit" method="POST" class="form">
                 <h2>Редактировать комментарий</h2>
+                <fieldset>
+                    <input type="hidden" value="<%=rate._id%>" name="id">
+                </fieldset>                
                 <fieldset class="fieldset">
-                    <textarea placeholder="Введите описание блога" name="description"><%=blog.description%></textarea>
-                    <!-- <textarea placeholder="Введите описание блога" name="description"><%=rate.text%></textarea> -->
+                    <!-- blog.description -->
+                    <textarea placeholder="Введите комментарий" name="text"><%=rate.text%></textarea>                    
                 </fieldset>    
                 <fieldset  class="fieldset">
                     <button class="blue-button" type="submit">Сохранить</button>

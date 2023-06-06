@@ -9,7 +9,7 @@ function sendRate(e){
     if(comment_text.length > 0){
         // console.log(comment_text);
         // console.log(comment_text.length);
-        axios.post('/api/rate' , {text: comment_text , authorId: author , blogId: blog}).then(data =>{
+        axios.post('/api/rate/new' , {text: comment_text , authorId: author , blogId: blog}).then(data =>{
             // console.log(data);
             if(data.data){
                 location.reload()
@@ -19,18 +19,20 @@ function sendRate(e){
 }
 
 //не работает
-function deleteRate(id){
-    console.log(id);
-
+function deleteRates(id,authorID){
+    console.log(id ,authorID);
+    // axios.delete(`/api/rate/${id}` , {id}).then(data => {
+    //     console.log(data)
+    // })
     // Rates.deleteOne({_id: ObjectId("6479f9adf8cdef81320b1b06")})
 
-    axios.delete(`/api/rate/${id}`).then(data => {
-        // console.log(data);
-        if(data.status == 200){
-            // location.replace(`/admin/${authorID}`)
-        }else if(data.status == 404){
-            location.replace('/not-found')
-        }
-    })
+    // axios.delete(`/api/rate/${id}`).then(data => {
+    //     console.log(data);
+    //     if(data.status == 200){
+    //         // location.replace(`/admin/${authorID}`)
+    //     }else if(data.status == 404){
+    //         location.replace('/not-found')
+    //     }
+    // })
     // console.log(id, authorID);
 }

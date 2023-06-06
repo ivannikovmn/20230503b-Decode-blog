@@ -71,7 +71,8 @@ router.get('/admin/:id', async(req, res) => {
     // res.render("adminProfile" , {user: req.user ?  req.user: {}})
     const user = await User.findById(req.params.id)
     const blogs = await Blog.find().populate('category').populate('author')
-    res.render("adminProfile" , {loginUser: req.user ?  req.user: {} , user: user, blogs})
+    const rates = await Rate.find().populate('authorId')
+    res.render("adminProfile" , {loginUser: req.user ?  req.user: {} , user: user, blogs, rates})
 })
 
 router.get('/new' , async(req , res) =>{
@@ -89,7 +90,8 @@ router.get('/edit/:id' , async(req , res) =>{
 router.get('/edit_comment/:id' , async(req , res) =>{
     const allCategories = await Categories.find()
     const blog = await Blog.findById(req.params.id)
-    res.render("editComment" , {categories: allCategories, user: req.user ?  req.user: {} , blog})
+    const rate = await Rate.findById(req.params.id)
+    res.render("editComment" , {categories: allCategories, user: req.user ?  req.user: {} , blog , rate})
 })
 
 router.get('/edit_user/:id' , async(req , res) =>{

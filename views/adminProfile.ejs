@@ -9,6 +9,32 @@
         <div class="main">
             <div class="main-content">
                 <h2 class="space-between">
+                    Комментарии
+                </h2>                
+                <%
+                    rates.forEach(item => {
+                %> 
+                <div class="main-card">
+
+                    <div class="card-center">
+                        <div class="space-between">
+                            <a href="#">
+                                <h3><%=item.text%></h3>
+                            </a>
+                            <div class="more">
+                                <img src="/images/icons/more.png" alt="">
+                                <div class="edit-remove-buttons flex-direction-column">
+                                    <a href="/edit_comment/<%=item._id%>">Редактировать</a> 
+                                    <a class="button-remove"  onclick="">Удалить</a>
+                                </div>                            
+                            </div>    
+                        </div>
+                    </div>                        
+                </div>                
+                <%
+                    })
+                %>                 
+                <h2 class="space-between">
                     Мои блоги
                     <button onclick="document.location='/new'" class="blue-button">
                         Новый блог
@@ -23,14 +49,7 @@
                             <div class="space-between">
                                 <a href="#">
                                     <h3><%=item.title%></h3>
-                                </a>
-                                <div class="more">
-                                    <img src="/images/icons/more.png" alt="">
-                                    <div class="edit-remove-buttons flex-direction-column">
-                                        <a href="/edit/<%=item._id%>">Редактировать</a> 
-                                        <a class="button-remove"  onclick="deleteBlogs('<%=item._id%>' , '<%=item.author._id%>')">Удалить</a>
-                                    </div>                            
-                                </div>    
+                                </a>                                      
                             </div>
                             <p>
                                 <%=item.description%>
