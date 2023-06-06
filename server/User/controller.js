@@ -5,5 +5,5 @@ const saveToWatch = (req , res) => {
 }
 
 module.exports = {
-    saveToWatch
+    saveToWatch,
 }

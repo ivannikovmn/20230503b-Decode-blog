@@ -72,7 +72,8 @@ router.get('/admin/:id', async(req, res) => {
     const user = await User.findById(req.params.id)
     const blogs = await Blog.find().populate('category').populate('author')
     const rates = await Rate.find().populate('authorId')
-    res.render("adminProfile" , {loginUser: req.user ?  req.user: {} , user: user, blogs, rates})
+    const users = await User.find().populate('authorId')
+    res.render("adminProfile" , {loginUser: req.user ?  req.user: {} , user: user, blogs, rates, users})
 })
 
 router.get('/new' , async(req , res) =>{
@@ -97,7 +98,8 @@ router.get('/edit_comment/:id' , async(req , res) =>{
 router.get('/edit_user/:id' , async(req , res) =>{
     const allCategories = await Categories.find()
     const blog = await Blog.findById(req.params.id)
-    res.render("editUser" , {categories: allCategories, user: req.user ?  req.user: {} , blog})
+    const user = await User.findById(req.params.id)
+    res.render("editUser" , {categories: allCategories, user: req.user ?  req.user: {} , blog , user})
 })
 
 router.get('/not-found', (req , res) => {
