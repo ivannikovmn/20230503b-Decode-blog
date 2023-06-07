@@ -1,6 +1,6 @@
-function deleteRates(id){
-    // console.log('work');
-    axios.delete(`/api/rates/${id}`).then(data => {
+function deleteUsers(id){
+    console.log('work');
+    axios.delete(`/api/users/${id}`).then(data => {
         // console.log(data);
         if(data.status == 200){
             location.replace(`/admin/644256663458cfea90f6b427`)
@@ -8,5 +8,5 @@ function deleteRates(id){
             location.replace('/not-found')
         }
     })
-    // console.log(id, authorID);
+    console.log(id);
 }

@@ -29,7 +29,18 @@ const editUser = async (req , res) => {
     }
 }
 
+const deleteUser = async(req , res) => {
+    const user = await User.findById(req.params.id)
+    if(user){
+        await User.deleteOne({_id: req.params.id})
+        res.status(200).send('ok')
+    }else{
+        res.status(404).send('Not found')
+    }
+}
+
 module.exports = {
     saveToWatch,
-    editUser
+    editUser,
+    deleteUser
 }
