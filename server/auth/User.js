@@ -10,7 +10,6 @@ const UserSchema = new mongoose.Schema({
     watched: [{type: Schema.Types.ObjectId , ref: 'blog'}],
     googleId: String,
     gitHubId: String,
-    authorId: {type: Schema.Types.ObjectId , ref: 'user'}
 })
 
 module.exports = mongoose.model('user' , UserSchema)

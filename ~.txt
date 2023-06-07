@@ -127,4 +127,8 @@ git add .
 git commit -m "add project 10 part 2 (delete comment)"
 git push origin main
 -
-git commit -m "add project 9 part 3-4 (view, edit user)"
+git add .
+git commit -m "add project 9 part 3-4, project 10 part 1 (view, near edit user)" 
+git push origin main
+-
+git commit -m "fix add project 9 part 3-4, project 10 part 1 (view, edit user)" 

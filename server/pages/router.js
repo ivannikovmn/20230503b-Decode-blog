@@ -72,7 +72,7 @@ router.get('/admin/:id', async(req, res) => {
     const user = await User.findById(req.params.id)
     const blogs = await Blog.find().populate('category').populate('author')
     const rates = await Rate.find().populate('authorId')
-    const users = await User.find().populate('authorId')
+    const users = await User.find()
     res.render("adminProfile" , {loginUser: req.user ?  req.user: {} , user: user, blogs, rates, users})
 })
 
