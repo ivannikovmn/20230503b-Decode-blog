@@ -8,5 +8,5 @@ function deleteUsers(id){
             location.replace('/not-found')
         }
     })
-    console.log(id);
+    // console.log(id);
 }

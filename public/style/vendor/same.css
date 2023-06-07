@@ -41,6 +41,11 @@ button{
     transition: .6s;
 }
 
+.block-button{
+    color: #4c4d4d;
+    transition: .6s;
+}
+
 .container{
     padding: 100px 5% 50px;
     background-color: #f4f4f4;

@@ -132,5 +132,13 @@ git commit -m "add project 9 part 3-4, project 10 part 1 (view, near edit user)"
 git push origin main
 -
 git add .
-git commit -m "fix add project 9 part 3-4, project 10 part 1 (view/edit/delete user/comment)" 
+git commit -m "fix add project 9 part 3-4, project 10 part 1-2 (view/edit/delete user)" 
 git push origin main
+-
+git commit --amend -m "fix add project 9 part 3-4, project 10 part 1-2 (view/edit/delete user/comment)"
+git push --force origin main
+-
+git add .
+git commit -m "add project 9 part 3-4, project 10 part 1 and web (block user)" 
+git push --force origin main
+-

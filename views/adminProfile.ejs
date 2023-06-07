@@ -23,9 +23,10 @@
                             <div class="more">
                                 <img src="/images/icons/more.png" alt="">
                                 <div class="edit-remove-buttons flex-direction-column">
-                                    <a href="/edit_user/<%=item._id%>">Редактировать</a> 
-                                    <a href="" style="font-style: italic">Блокировать</a> 
-                                    <a class="button-remove"  onclick="deleteUsers('<%=item.id%>' )">Удалить</a>
+                                    <a href="/edit_user/<%=item._id%>">Редактировать</a> <br>
+                                    <!-- <a href="" style="font-style: italic">Блокировать</a>  -->
+                                    <a class="button-remove"  onclick="deleteUsers('<%=item.id%>' )">Удалить</a> <br>
+                                    <a href="/block_user/<%=item._id%>" class="block-button">Блок</a>
                                 </div>                            
                             </div>    
                         </div>

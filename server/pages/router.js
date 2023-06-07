@@ -103,6 +103,13 @@ router.get('/edit_user/:id' , async(req , res) =>{
     res.render("editUser" , {categories: allCategories, user: req.user ?  req.user: {} , blog , user})
 })
 
+router.get('/block_user/:id' , async(req , res) =>{
+    const allCategories = await Categories.find()
+    const blog = await Blog.findById(req.params.id)
+    const user = await User.findById(req.params.id)
+    res.render("blockUser" , {categories: allCategories, user: req.user ?  req.user: {} , blog , user})
+})
+
 router.get('/not-found', (req , res) => {
     res.render("notFound")
 })
